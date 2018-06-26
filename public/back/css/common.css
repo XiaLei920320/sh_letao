@@ -142,3 +142,10 @@ ul {
   width: 48%;
   height: 400px;
 }
+/*user.html*/
+.table-bordered.table-hover tr th,
+.table-bordered.table-hover tr td {
+  text-align: center;
+  vertical-align: middle;
+
+}
