@@ -133,7 +133,12 @@ ul {
   text-align: center;
   font-size: 20px;
 }
-
 .breadcrumb {
   margin-top:20px;
+}
+/*index.html*/
+.echarts_1,
+.echarts_2 {
+  width: 48%;
+  height: 400px;
 }
