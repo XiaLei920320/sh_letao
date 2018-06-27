@@ -18,7 +18,7 @@ $(function () {
       url: "/category/querySecondCategoryPaging",
       dataType: "json",
       success: function (info) {
-        console.log(info);
+        //console.log(info);
         var tmp = template("tmp", info)
         $("tbody").html(tmp);
         //分页
@@ -42,7 +42,7 @@ $(function () {
     //渲染下拉菜单
     $.ajax({
       type: "get",
-      url: "/category/querySecondCategoryPaging",
+      url: "/category/queryTopCategoryPaging",
       data: {
         page: 1,
         pageSize: 50
@@ -61,8 +61,11 @@ $(function () {
     var txt = $(this).text();
     $("#dropdownTxt").text(txt);
     //记录当前选择的id
-    var id = $(this).data(id);
+    var id = $(this).data("id");
     $('[name="categoryId"]').val(id);
+
+    //重置
+    $("#form").data("bootstrapValidator").updateStatus("categoryId", "VALID")
   })
 
 
@@ -77,6 +80,9 @@ $(function () {
       $("#imgBox img").attr("src", url);
       //将地址给隐藏域
       $('[name="brandLogo"]').val(url);
+
+      //重置
+      $('#form').data("bootstrapValidator").updateStatus("brandLogo", "VALID");
     }
   });
 
@@ -122,20 +128,33 @@ $(function () {
 
   //阻止submit 提交
 
+
   $("#form").on("success.form.bv", function (e) {
     e.preventDefault();
     //发送ajax请求
     $.ajax({
-      type:"post",
-      data:$("#form").serialize(),
-      url:"/category/addSecondCategory",
-      dataType:"json",
+      type: "post",
+      data: $("#form").serialize(),
+      url: "/category/addSecondCategory",
+      dataType: "json",
       success: function (info) {
         console.log(info);
+      if(info.success){
+        $('#addModal').modal("hide");
+        courrentPage= 1;
+        rander()
+        $('#form').data("bootstrapValidator").resetForm(true);
 
+        $('#dropdownTxt').text("请选择一级分类");
+        $('#imgBox img').attr("src", "images/none.png");
+
+      }
       }
     })
   })
+
+
+
 
 
 })
