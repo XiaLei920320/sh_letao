@@ -143,8 +143,8 @@ $(function () {
         $('#addModal').modal("hide");
         courrentPage= 1;
         rander()
-        $('#form').data("bootstrapValidator").resetForm(true);
 
+        $('#form').data("bootstrapValidator").resetForm(true);
         $('#dropdownTxt').text("请选择一级分类");
         $('#imgBox img').attr("src", "images/none.png");
 
