@@ -80,7 +80,10 @@
 
   <!--产品模板-->
 <script type="text/html"  id="tpl">
-
+    {{if data.length === 0}}
+    <p>没有更多商品</p>
+    {{ /if}}
+    {{ if data.length>0}}
   <ul>
     {{ each data v i }}
     <li class="lt_product_item">
@@ -96,7 +99,7 @@
     </li>
     {{ /each}}
   </ul>
-
+  {{ /if }}
 
 
 </script>
