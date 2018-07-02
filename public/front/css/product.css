@@ -1,0 +1,37 @@
+.lt_footer {
+  padding:8px 10px;
+  background-color: #fff;
+  border-top:1px solid red;
+
+}
+
+.lt_item {
+  padding: 10px;
+  border-top:1px solid #ccc;
+}
+.lt_item .price {
+  color: red;
+  font-size: 20px;
+}
+.lt_item .oldPrice {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #666;
+}
+.lt_size span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height:25px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+.lt_size span.current{
+  background-color: orange;
+}
+.lt_num  span {
+  color: #666;
+  font-size: 12px;
+}
+

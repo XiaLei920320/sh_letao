@@ -67,24 +67,21 @@
 .lt_product li .mui-ellipsis-2 {
   height: 40px;
 }
-.lt_product .loading {
-  border: 3px solid blue;
-  width: 100px;
-  height:100px;
-  margin-top: 100px;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  animation: load 1s infinite linear;
-}
-@keyframes load {
-  from {
-    transform: translateX(-50%) rotate(0deg);
-  }
-
-  to {
-    transform: translateX(-50%) rotate(360deg);
-  }
-
-
-}
+/*.lt_product .loading {*/
+  /*border: 3px solid blue;*/
+  /*width: 100px;*/
+  /*height:100px;*/
+  /*margin-top: 100px;*/
+  /*margin-left: 50%;*/
+  /*transform: translateX(-50%);*/
+  /*animation: load 1s infinite linear;*/
+/*}*/
+/*@keyframes load {*/
+  /*from {*/
+    /*transform: translateX(-50%) rotate(0deg);*/
+  /*}*/
+  /*to {*/
+    /*transform: translateX(-50%) rotate(360deg);*/
+  /*}*/
+/*}*/
     

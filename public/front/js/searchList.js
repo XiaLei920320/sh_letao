@@ -58,10 +58,8 @@ $(function () {
             $(".lt_product").html(htmlSrt);
             //数据回来需要关闭刷新
             mui('.mui-scroll-wrapper').pullRefresh().endPulldownToRefresh();
-
             mui('.mui-scroll-wrapper').pullRefresh().enablePullupToRefresh();
           })
-
         }
       },
 
@@ -79,18 +77,9 @@ $(function () {
               $(".lt_product").append(htmlSrt);
               mui('.mui-scroll-wrapper').pullRefresh().endPullupToRefresh();
             }
-
-
-
-
           })
-
-
         }
-
-
       }
-
     }
   });
 
@@ -102,7 +91,10 @@ $(function () {
       mui.toast("请输入搜索关键字");
       return;
     }
-    render();
+    //render();
+    mui('.mui-scroll-wrapper').pullRefresh().pulldownLoading();
+
+
     var history = localStorage.getItem("search_list") || '[]';
     var arr = JSON.parse(history);
     //不重复
@@ -119,7 +111,7 @@ $(function () {
   })
 
 
-  $('.lt_sort a[data-type]').click(function () {
+  $('.lt_sort a[data-type]').on('tap',function () {
     if ($(this).hasClass("current")) {
       // 同时切换两个类名
       $(this).find("i").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
@@ -129,12 +121,9 @@ $(function () {
       $(this).addClass("current").siblings().removeClass("current");
     }
     // 调用 render 进行重新渲染
-    render();
+    //render();
+    mui('.mui-scroll-wrapper').pullRefresh().pulldownLoading();
   })
-
-
-
-
 
   //在inpu按回车键
   $(".search-input").keydown(function (e) {//当按下按键时
@@ -142,6 +131,13 @@ $(function () {
       $('.search-button').trigger("click");//触发搜索按钮的点击事件
     }
   });
+
+  //由于html 页面的a 不能点击
+  $(".lt_product").on('tap','a',function () {
+    var id = $(this).data('id');
+    location.href="product.html?productId="+id;
+
+  })
 
 
 })

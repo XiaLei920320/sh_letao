@@ -1,0 +1,46 @@
+.lt_cart {
+
+}
+.mui-table-cell {
+  position: relative;
+}
+
+.lt_cart .img_box {
+  float: left;
+}
+.lt_cart .img_box img {
+  width: 60px;
+  height: 60px;
+}
+.info_box {
+  overflow: hidden;
+  padding-left:5px;
+}
+.info_box .proname {
+  font-size: 14px;
+  color: #000;
+  margin-bottom:5px;
+}
+
+.info_box .price{
+  color: red;
+}
+
+.info_box .old_price{
+  text-decoration: line-through;
+}
+.info_box .lt_num{
+  float: right;
+}
+.ck {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+.lt_edit_size span {
+  border: 1px solid #ccc;
+}
+
+.lt_edit_size span.now{
+  background-color: orange;
+}
