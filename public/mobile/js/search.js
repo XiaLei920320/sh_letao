@@ -3,7 +3,6 @@
  */
 
 $(function() {
-
   // 用户获取 search_history 的值, 并且转换成数组, 方便操作
   function getHistory() {
     // 得到 json 字符串
@@ -15,7 +14,6 @@ $(function() {
   
   // 1. 渲染搜索列表
   render();
-  
   function render() {
     var arr = getHistory();
     $(".history").html( template("tpl", { arr: arr } ) );
@@ -46,7 +44,7 @@ $(function() {
   // 4. 添加搜索列表
   $('.search_btn').click(function() {
     var key = $('.search_input').val().trim();
-    if ( key === "" ) {
+    if ( key.trim() === "" ) {
       mui.toast("请输入搜索关键字");
       return false;
     }
@@ -73,5 +71,13 @@ $(function() {
     // 跳转到 searchList 页面
     location.href = "searchList.html?key=" + key;
   })
+
+  //在input 框中安enter 进行搜索
+  $(".search_input").keydown(function (e) {//当按下按键时
+    if (e.which == 13) {//.which属性判断按下的是哪个键，回车键的键位序号为13
+      $('.search_btn').trigger("click");//触发搜索按钮的点击事件
+    }
+    console.log(1);
+  });
 
 })
